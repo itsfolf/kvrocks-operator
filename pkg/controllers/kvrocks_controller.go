@@ -142,7 +142,7 @@ func (r *KVRocksReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ct
 	}
 	log.Info("reconcile begin")
 	err, _ = handler.Handle()
-	if err != nill {
+	if err != nil {
 		log.Error(err, "Handle error")
 	}
 	if handler.Requeue() || shouldRetry(err) {
